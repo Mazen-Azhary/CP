@@ -1,0 +1,1 @@
+if in our problem we are searching for max or min while our range is monotonic , we can use binary search on answer , like magic powder problem
