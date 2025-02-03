@@ -1,0 +1,16 @@
+monotonocity is a concept where array values being sorted leads to a certain condition being true in one consecutive 
+part of array only
+
+for example if we have an array 1 5 19 22 24 30 50 
+
+say we are searching for a value 22 
+so if we say from left to right , in each index ask a question : could the value be on my right ? (bigger than me)
+
+T T T F F F F 
+this is called always non decreasing:first true
+
+the opposite happens if we ask the question in reverse so it's 
+
+F F T T T T T 
+
+this is called always non increasing:last true
