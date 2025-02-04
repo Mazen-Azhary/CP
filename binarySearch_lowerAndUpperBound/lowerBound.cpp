@@ -8,8 +8,8 @@ using namespace std;
 #define ll long long
 int main()
 {
-    Mazen int n, target;
-    cin >> n >> target;
+    Mazen int n, q;
+    cin >> n >> q;
     vector<int> arr(n);
     for (int i = 0; i < n; i++)
     {
@@ -18,6 +18,10 @@ int main()
     sort(arr.begin(), arr.end());
     ll ans = 0;
     int l = 0, r = n - 1;
+    while(q--){
+    int target;
+    cin >> target;
+
     while (l <= r)
     {
         int mid = (l + r) / 2;
@@ -33,10 +37,13 @@ int main()
     }
 
     if (arr[ans] >= target)
-        cout << arr[ans] << endl;
+        cout << ans+1 << '\n';
     else
     {
-        cout << -1 << endl;
+        cout << -1 << '\n';
+    }
+    l = 0;
+    r = n - 1;
     }
     return 0;
 }
