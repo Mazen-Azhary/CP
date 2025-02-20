@@ -10,22 +10,19 @@ using namespace std;
 void solve() {
   ll n;
   cin >> n;
-  vector<ll> a(n + 1, 0);
-  for (int i = 1; i <= n; i++) {
+  vector<ll> a(n, 0);
+  for (ll i = 0; i < n; i++) {
     cin >> a[i];
   }
-  ll pairs = 0;
-  for (int i = 1; i < n + 1; i++) {
-    if (a[i] >= i)
-      continue;
-    for (ll j = i + 1; j <= n; j++) {
-      if (a[j] < j && i < a[j]) {
-        pairs++;
-      }
+  ll ans = 0;
+  vector<ll> rights;
+  for (int i = 0; i < n; i++) {
+    if (a[i] < i + 1) {
+      ans += lower_bound(rights.begin(), rights.end(), a[i]) - rights.begin();
+      rights.push_back(i + 1);
     }
   }
-
-  cout << pairs << endl;
+  cout << ans << endl;
 }
 
 int main() {
