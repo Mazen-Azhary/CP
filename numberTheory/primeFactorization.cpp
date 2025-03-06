@@ -7,7 +7,7 @@ vector<ll> prime_factorization1(ll n) {
   vector<ll> factors;
   bool divided = false;
   while (n > 1) {
-    for (int i = 2; i * i <= n; i++) {
+    for (ll i = 2; i * i <= n; i++) {
       // start from 2 as we don't want 1 , the num could be
       // 1*1*1*........*itself which is wrong
 
@@ -17,8 +17,8 @@ vector<ll> prime_factorization1(ll n) {
         //  then we let n=n/divisor which is n=12/2=6
         // then we break because we want to start again with first divisor of
         // new n we can say that we start with 12 then we find 2 we push it in f
-        // then we take 6 then we push 2 into f
-        // then we take 3 then we push 3 into f
+        // then we take 6 then we push 2 llo f
+        // then we take 3 then we push 3 llo f
         // then we take 1 then we break from outer loop
         n /= i;
         divided = true; // flag to check if it accepted any divisions for
@@ -38,7 +38,7 @@ vector<ll> prime_factorization1(ll n) {
     }
     if (!divided) { // if it didn't accept any division upto root
                     // n then it is prime
-      cout << "prime " << endl;
+      //cout << "prime " << endl;
       factors.push_back(n);
       n = 1;      
     }
@@ -48,7 +48,7 @@ vector<ll> prime_factorization1(ll n) {
 
 vector<ll> prime_factorization2(ll n){//this is shorter form
     vector<ll> factors;
-    for (int i = 2; i * i <= n; i++) {//attempt divisions from 2 to sqrt(n)
+    for (ll i = 2; i * i <= n; i++) {//attempt divisions from 2 to sqrt(n)
         while (n % i == 0) {//as long as u can divide on num i keep going , for ex 26,18,9, then we break from while and increment i
         factors.push_back(i);
         n /= i;
@@ -70,7 +70,7 @@ int main() {
       cout << f << " ";
     }
   } else {
-    cout << "No prime factors found";
+   // cout << "No prime factors found";
   }
   return 0;
 }
