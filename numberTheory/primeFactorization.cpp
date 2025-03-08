@@ -51,8 +51,7 @@ vector<ll> prime_factorization2(ll n){//this is shorter form
     for (ll i = 2; i * i <= n; i++) {//attempt divisions from 2 to sqrt(n)
         while (n % i == 0) {//as long as u can divide on num i keep going , for ex 26,18,9, then we break from while and increment i
         factors.push_back(i);
-        n /= i;
-        
+        n /= i;        
         }
     }
     if (n > 1) {//if no divisions push num itself
