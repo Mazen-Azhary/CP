@@ -13,7 +13,7 @@ bool almostPrime[MAX + 1];
 int divisors[MAX + 1];
 
 int main() {
-
+  //https://codeforces.com/problemset/problem/26/A
   Mazen int n;
   cin >> n;
 
