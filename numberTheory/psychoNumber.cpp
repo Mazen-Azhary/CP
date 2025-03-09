@@ -44,8 +44,7 @@ int main() {
   Mazen
   for (int i = 2; i <= MAX; i++) divisors[i] = i; 
     
-  for (int i = 2; i*i <= MAX; i++) {
-    
+  for (int i = 2; i*i <= MAX; i++) {    
     if (divisors[i] == i) { 
         for (int j = i * i; j <= MAX; j += i) {
             if (divisors[j] == j) divisors[j] = i; 
