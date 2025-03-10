@@ -10,6 +10,8 @@ using namespace std;
 void solve(){
     ll n;
     cin >> n;
+
+    
     if(n%2!=0){
         cout << "YES" << endl;
         return;
