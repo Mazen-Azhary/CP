@@ -1,0 +1,35 @@
+A power n , 
+for(n){
+    a*=a;
+}
+ if n>=1e9 , we get time limit
+
+ 2 pow 6 = 2*2*2*2*2*2 
+ = (2pow3)pow2
+
+2 pow 8 = (2pow4)pow2
+
+2pow15  
+res     base    pow
+1       2       15  //if pow is odd , mul base by result 
+2       2       14  //if it's even , basepow2 and pow/=2
+2       4       7
+8       4       6
+8       16      3
+128     16      2
+128     256     1
+32768   256     0
+
+2pow15 = 2*2pow14 = 2(2pow2)pow7 = 2(4pow7)
+
+res =1;
+while(power>0){
+    if(even(power)){
+        base = base power 2;
+        pow/=2;
+    }else{
+        res = res*base;
+        pow--;
+    }
+}
+    

@@ -21,7 +21,7 @@ int main(){
     vector<bool> prime(n+1,true);
     vector<ll> dividor(n+1,0);
     prime[0] = prime[1] = false;
-    for (ll i = 2; i <= n; i++) {
+    for (ll i = 2; i <= n; i++) {//O(nlog(logn))
         
         if (prime[i]==true) {
             dividor[i] = i;

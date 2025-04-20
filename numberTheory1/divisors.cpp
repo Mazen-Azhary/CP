@@ -26,6 +26,21 @@ int main() {
       }
     }
   }
+
+vector<vector<ll>> divisors2(n); //another way to find divisors , O(nlogn) , harmonic series
+for(int i=1;i<=n;i++){
+    for(int j=i;j<=n;j+=i){
+        divisors2[j].push_back(i); //this is O(const) but it is a large const when vec size increases so it might get time limit
+    }
+}
+vector<vector<ll>> numOfDivisors(n); 
+for(int i=1;i<=n;i++){
+    for(int j=i;j<=n;j+=i){
+        numOfDivisors[j]++; 
+    }
+
+}
+
   sort(divisors.begin(), divisors.end());
   cout << divisors.size()  << endl;
   for (ll i = 0; i < divisors.size(); i++) {

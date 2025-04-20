@@ -1,0 +1,113 @@
+Time now = 12*Q + R
+Q>=0  R<12
+R=%
+
+a%n finds remainder after division by n
+
+27/12 feeha 2*12 + 3 , elly heya 2+3/12
+
+2:quotient , 3:remainder
+
+therefore 27%12 = 3
+a: num I want to divide , n : dividor 
+
+a = 12*Q + R
+R = a - 12*Q, Q = floor(a/12)
+
+R = a -n* floor(a/n)
+
+R range is from 0 to 11 , 0 to n-1 inclusive
+|R| < n
+
+if I want to do a%n where a is negative , I will need to add a cycle to a after getting answer
+
+ex: if it's 6 o'clock now , what time was it 13 hrs ago?
+ans : (6-13)%12 = -7%12
+
+-7%12 = -7-12(floor(-7/12)) 
+floor(-7/12) = 0 , -7%12 = -7 then we add 12(cycle) to make it 5 o'clock
+
+to let the formula work for +ve and -ve integers I can add a cycle then take the whole formula
+mod the divider
+
+if it's +ve no change and if it's -ve it will adjust itself to -ve + cycle = +ve
+
+
+mod formula:R=(a%n + n)%n
+
+mod is expensive in time 
+
+r = a-n*floor(a/n)
+we could reduce the num as possible before solving 
+
+while(a>=n)a-=n; //remove as much cycles as possible
+while(a<0)a+=n //if num neg
+
+let a = 31 and n =12
+31-2(12) = 7
+this approach (2 whiles to get mod instead of using mod formula) is better when a>smallConstant*n , it is O(a/n) which is almost O(a),
+so if a is small it's ok but if it's large it's better to use the formula (one division is expensive but multiple add/sub are worse)
+
+for ex if n is 1e9 , and your max num is (1e9 + num<1e9) , do the approach of add and sub 
+
+
+some facts :
+(I)     a%3 , ans is int x where x belongs to [-2,2]
+
+(II)    if a%n = 0 then a is divisible by n
+
+(III)   if(a%n == b%n) then (a-b)%n==0 ; because |a-b| = 0,n,2n,3n,.....
+
+(VI)    (a%n)%n==a%n
+
+(V)     (n^x)%n=0 if x>0
+___________________________________________________________________________________________________________________________________________
+
+(1/a)%n this is called mod inverse (modular multiplicative inverse)
+
+___________________________________________________________________________________________________________________________________________
+
+more imp facts:
+
+(A+B)%n = ((A%n) + (B%n))%n
+المود بيتوزع بس هنحط مود تاني برة عشان نحافظ ع المود لحد 
+n-1
+
+(A+B+C)%n = ( ((A%n)+(B%n))%n +C%n )%n
+
+***if I have a problem , var ans=0 and cin>>var x , I want (ans+x)%mod 5 times
+so I say it is equivalent to 
+
+for(5){
+    ans+=(ans+x)%5 ; //could cause overflow so we distribute mod on them
+}
+
+for(5){
+ans = (ans%mod + x%mod);
+ans%=mod; 
+}
+
+if u notice , ans is already moded at end of each loop so what we are doing is ans = (ans%mod)%mod; so we can remove first mod
+
+
+for(5){
+ans = (ans + x%mod);
+ans%=mod; 
+}
+
+for(5){
+ans += x%mod;
+ans%=mod; 
+}
+
+***I want (A-B)%N , = (A%N - B%N + N )%N;//I added +N like discussed above in line 28 it is an extra cycle to avoid negative number problem
+
+(A*B)%N = (A%N * B%N)%N
+
+***say I have 321%N
+it is the same as(3*100 + 2*10 +1)%N
+which is ( ( (3%N) * (100%N) )%N + ( 2%N * 10%N )%N + 1%N  )%N
+when I distribute the %N , let first two terms of 300 and 20 be A & B , A and B are already moded individually so I will do (A+B)%N
+
+ans = (A+B)%N + 1%N //1 was already moded
+
