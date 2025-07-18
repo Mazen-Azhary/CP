@@ -1,0 +1,5 @@
+adjacency matrix n*n , max fits if n=1e6
+adjacency list could be used but make it vector of sets instead of vector of vectors ,
+set search complexity is O(logn) 
+
+
