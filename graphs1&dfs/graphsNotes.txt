@@ -2,4 +2,33 @@ adjacency matrix n*n , max fits if n=1e6
 adjacency list could be used but make it vector of sets instead of vector of vectors ,
 set search complexity is O(logn) 
 
+the tree is considered a special case of graphs
+it's an undirected acyclic graph 
+it has a special node called root which is the top/starting node of the tree
+each node has a level 
+root is at lvl 0 
+
+node level is defined as number of edges between a node and root 
+each node has 1 parent only , and some children , siblings , uncles , grandfathers 
+
+if u have n nodes , then u always have n-1 edges , because root doesn't have a parent 
+
+so for each node other than root we have an edge connecting it to its parent , so #edges is n-1 .
+
+Complete graph : 
+it's a graph which has n nodes and n(n-1)/2 edges , because each node is connected to 
+all other nodes
+
+هي n*(n-1)/2 
+لان الطريق الواحد من دول رايح جي فا عشان كدا ظهرت ال/2 
+و كل نود طالع منها n-1 
+ايدجز للباقي كلهم
+
+Bipartite Graph : 
+it's a graph where we have red nodes and blue nodes , or set1 nodes and set2 nodes
+such as each and every edges connect red to blue or set1 to set2 , any two same color nodes
+can't have a direct edge connecting them. 
+
+Bipartite graphs don't have odd cycles (cycles of length=oddNum)
+it has cycles of length 4,6,8,....
 

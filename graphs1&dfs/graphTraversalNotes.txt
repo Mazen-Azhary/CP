@@ -1,0 +1,23 @@
+DFS can be written in recursive or iterative way 
+but recursive in graphs is easier 
+
+DFS (depth first search)
+as long as u have adjacent non-visited nodes , visit them 
+
+for ex our graph is 
+
+2 ---- 4 ---- 1  
+| \    /\     /
+|  \  /  \   /
+3    0---- 5  
+
+start from 1 , visit 4 or 5 , let's choose 4 and mark 4 as visited
+then from 4 , we have 1(visited),0,2,5(unvisited) , choose 5 and mark as visited
+from 5 , we have 1,4(visited) and 0 unvisited , we choose 0 compulsory
+.............
+
+visit order : 1 4 5 0 2 3
+
+DFS complexity is O( n + m )
+the total operations i did where recursively calling n nodes , and the total num of edges I iterate on
+is about O(m) but in reality it is a little bit bigger than m ,O(m) assumes each edge is explored once

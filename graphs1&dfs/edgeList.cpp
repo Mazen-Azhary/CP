@@ -20,6 +20,8 @@ int main() {
   //      cin >> edge_list[i].first >> edge_list[i].second;
 
   // undirected
+  //use set to guarantee O(log n) time complexity for edge search
+  //the set will be for example ( {1,2},{1,3},....{U m-1 , V m-1}   )
   set<pair<ll, ll>> edge_list;
   for (int i = 0; i < m; i++) {
     int u, v;
