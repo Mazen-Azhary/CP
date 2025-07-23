@@ -32,3 +32,22 @@ can't have a direct edge connecting them.
 Bipartite graphs don't have odd cycles (cycles of length=oddNum)
 it has cycles of length 4,6,8,....
 
+Connected components in a graph:
+
+if I have a graph
+ 1 -- 2 -- 3 -- 4
+ 5 -- 6
+ 7
+this means there are 3 connected components
+
+and I want to discover which components are connected , i start dfs from 1 
+
+for 1->n
+if(node is not visited)
+    this is the start of a new connected series of components
+    dfs from here
+
+
+Complexity should be n*(n+m) , but it's actually n + n + m , i do n steps in for loop but not 
+every iteration requires dfs on whole graph , the total loops num of loops n involved a total
+of n+m which is total dfs on graph , making it 2n+m which is O(n+m) 

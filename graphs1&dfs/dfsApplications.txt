@@ -1,0 +1,13 @@
+some applications of dfs :
+
+1 : path finding between two nodes in a graph
+
+2: detecting cycles in a graph
+
+3: topological sort
+
+4: solving puzzles such as mazes , sudokou , ...
+
+5: finding connected components of a graph
+
+6: finding strongly connected components
