@@ -51,3 +51,16 @@ if(node is not visited)
 Complexity should be n*(n+m) , but it's actually n + n + m , i do n steps in for loop but not 
 every iteration requires dfs on whole graph , the total loops num of loops n involved a total
 of n+m which is total dfs on graph , making it 2n+m which is O(n+m) 
+
+
+How to find out if a graph is a tree?
+2 of these 3 must be proven to proof it is a tree
+
+1) m = n-1
+2) acyclic
+3) it is 1 connected component only
+
+if we want to check if a graph is for example 2 trees 
+we can do same check but num of edges now has to be n-2
+and so on
+
